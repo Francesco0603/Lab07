@@ -1,3 +1,5 @@
+import time
+
 import flet as ft
 
 from UI.view import View
@@ -25,15 +27,18 @@ class Controller:
 
 
     def handle_sequenza(self, e):
+        x = time.time()
         if self._mese == 0:
             self._view.create_alert("Selezionare un mese")
             return
+
         sequenza, costo = self._model.calcola_sequenza(self._mese)
         self._view.lst_result.controls.clear()
         self._view.lst_result.controls.append(ft.Text(f"Il costo della sequenza è {costo}"))
         for fermata in sequenza:
             self._view.lst_result.controls.append(ft.Text(fermata))
         self._view.update_page()
+        print(time.time()-x)
 
 
     def read_mese(self, e):

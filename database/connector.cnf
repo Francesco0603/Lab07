@@ -1,6 +1,7 @@
 [client]
 user=root
-password=password
+password=PopiPassword23!
 host=127.0.0.1
 database=meteo
+port=3307
 raise_on_warnings=True
