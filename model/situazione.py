@@ -11,6 +11,9 @@ class Situazione:
     def __eq__(self, other):
         return self.localita == other.localita and self.data == other.data
 
+    def stessaCitta(self, other):
+        return self.localita == other.localita
+
     def __hash__(self):
         return hash((self.localita, self.data))
 
